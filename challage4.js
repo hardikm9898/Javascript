@@ -1,6 +1,9 @@
 // challange#4
+// testcase#1
+let bill = 256
 
-const bill = Number(prompt("pass the bill value"))
+// testcase#2
+bill=200
 
 const tip15Percent = (bill * 15) / 100
 

@@ -2,19 +2,19 @@
 
 
 
-// const hello = function (m, n) {
-//     console.log(m, n)
-//     const mean = `my name is ${m} and my age is${n}`
-//     return mean
-// }
+const hello = function hello (m, n) {
+    console.log(m, n)
+    const mean = `my name is ${m} and my age is${n}`
+    return mean
+}
 
-// hello(5, 21)
+hello(5, 21)
 
-// console.log(hello(5, 21));
+console.log(hello(5, 21));
 
-// const self = hello(5, 21)
+const self = hello(5, 21)
 
-// console.log(self)
+console.log(self)
 
 
 
@@ -28,49 +28,51 @@
 
 
 
-// const calcAverage = (a, b, c) => {
+const calcAverage = (a, b, c) => (a + b + c) / 3
 
-//     return (a + b + c) / 3
-// }
 
 // testcase#1
 
 
-// const avgDolphins = calcAverage(44, 23, 71)
-// const avgKoalas = calcAverage(85, 54, 41)  answer is=No one winnner yet try you luck next time 
+let avgDolphins = calcAverage(44, 23, 71)
+let avgKoalas = calcAverage(85, 54, 41) 
+
+// answer is=No one winnner yet try you luck next time 
 
 
 // testcase#2
 
 
-// const avgDolphins = calcAverage(85, 54, 41)
-// const avgKoalas = calcAverage(23, 34, 27)
+ avgDolphins = calcAverage(85, 54, 41)
+ avgKoalas = calcAverage(23, 34, 27)
 
-// console.log(avgDolphins)
-// console.log(avgKoalas)
-
-
-// function checkWinner() {
-
-//     console.log(avgDolphins)
-
-//     console.log(avgDolphins > (avgKoalas * 2))
-
-//     if (avgDolphins > (avgKoalas * 2)) {
-//         console.log(`dohlphin team is winner`)
-//     }
-//     else if (avgKoalas > (avgDolphins * 2)) {
-//         console.log(`koalash team is winner`)
-//     }
-//     else {
-//         console.log("No one winnner yet try you luck next time ")
-//     }
+console.log(avgDolphins)
+console.log(avgKoalas)
 
 
+function checkWinner() {
 
-// }
+    console.log(avgDolphins)
 
-// console.log(checkWinner())
+    console.log(avgDolphins > (avgKoalas * 2))
+
+    if (avgDolphins > (avgKoalas * 2)) {
+        console.log(`dohlphin team is winner`)
+    }
+    else if (avgKoalas > (avgDolphins * 2)) {
+        console.log(`koalash team is winner`)
+    }
+    else {
+        console.log("No one winnner yet try you luck next time ")
+    }
+
+
+
+}
+
+const winner = checkWinner()
+
+console.log(winner)
 
 
 // codding challange #2 arrays 
@@ -79,51 +81,37 @@
 
 
 
-// const tips = []
-// const bills = [125, 55, 44]
+const tips = []
+const bills = [125, 55, 44]
 
 
-// const calcTip = (billValue) => {
-
-
-
-//     if (billValue >= 50 && billValue <= 300) {
-//         const tip = (billValue * 15) / 100
-//         tips.push(tip)
-//     }
-//     else {
-//         const tip = (billValue * 20) / 100
-//         tips.push(tip)
-//     }
-
-//     return tips
-// }
+const calcTip = (billValue) => {
 
 
 
-// for (i = 0; i < bills.length; i++) {
+    if (billValue >= 50 && billValue <= 300) {
+        const tip = (billValue * 15) / 100
+        tips.push(tip)
+    }
+    else {
+        const tip = (billValue * 20) / 100
+        tips.push(tip)
+    }
+
+    return tips
+}
 
 
-//     const arrayOfTips = calcTip(bills[i])
 
-//     // console.log(arrayOfTips)
-
-//     if (arrayOfTips.length === bills.length) { console.log(bills, arrayOfTips) }
-// }
+for (let i = 0; i < bills.length; i+=1) {
 
 
+    const arrayOfTips = calcTip(bills[i])
 
-// const jay = {
-//     name: "jay mehta"
-// }
+    // console.log(arrayOfTips)
 
-// // jay = {
-// //     name: "mehta"
-// // }
-
-// jay.name = "mehta"
-
-
+    if (arrayOfTips.length === bills.length) { console.log(bills, arrayOfTips) }
+}
 
 // object practice
 
@@ -138,12 +126,12 @@ const hardik = {
 
 const me = hardik.work
 console.log(me);
-console.log(hardik['work']);
+console.log(hardik.work);
 
 
-const pr = (prompt("what do you want from hardik name,lastname,job,work"))
+const pr = "job"
 
-// const ans = hardik[pr];
+// let ans = hardik[pr];
 
 console.log(typeof pr)
 
@@ -156,3 +144,70 @@ const nmFreinds = hardik.friends.length;
 console.log(nmFreinds)
 
 console.log(`${hardik.name} have ${nmFreinds} his bestfiends name is ${hardik.friends[0]}`)
+
+
+// challanges :2
+
+const intro = {
+    name: "hardik",
+    lasname: "makwana",
+    job: "trainee",
+    birthYear: 2002,
+    work: "simform",
+    friends: ["vishanu", "ajit", "annad"],
+    divingLicence: false,
+
+    calage (birthYear) {
+        return 2037 - birthYear
+    }
+}
+const derivingLicenceOrNot = intro.divingLicence ? "driving lecenc" : "not a driver's license "
+
+
+
+
+
+console.log(`${intro.name} is a  ${intro.calage(2002)}-year old  ${intro.job},and he hasa ${derivingLicenceOrNot} `);
+
+// testcase#1
+
+let mark = {
+    name: "mark",
+    mass: 64,
+    height: 1.69
+}
+let john = {
+    name: "john",
+    mass: 53.3,
+    height: 1.95
+}
+//  testcase #2
+
+ mark = {
+    name: "mark",
+    mass: 94,
+    height: 1.59
+}
+john = {
+    name: "john",
+    mass: 83.3,
+    height: 1.15
+}
+
+const calcBMI = function calcBMI(mass, height) {
+    return mass / (height * height)
+}
+
+const johnBMI = calcBMI(john.mass, john.height)
+console.warn("🚀 ~ file: function.js:202 ~ jayBMI:", johnBMI)
+const markBMi = calcBMI(mark.mass, mark.height)
+console.warn("🚀 ~ file: function.js:204 ~ bhagvanjiBMi:", markBMi)
+
+if (johnBMI > markBMi) {
+    console.log(`${john.name} BMI ${johnBMI} is higher than ${mark.name} ${markBMi}!`)
+} else {
+    console.log(`${mark.name} BMI ${markBMi} is higher than ${john.name} ${johnBMI}!`)
+
+}
+
+
