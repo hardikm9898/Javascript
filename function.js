@@ -214,3 +214,12 @@ const calAvrage = function (arr) {
 console.log(calAvrage(tips1));
 console.log(calAvrage(total));
 console.log(calAvrage([2, 8, 9]));
+
+const jessi = {
+  me: "jessi",
+  age: 21,
+};
+
+console.log(jessi);
+
+Object.assign({}, marry);
