@@ -54,7 +54,7 @@ console.log(x, y, z); //   1 2 3
 
 // rest operatore practice
 
-let mat = [1, 2, 3, 4, 5];
+const mat = [1, 2, 3, 4, 5];
 
 const arr = [...mat, 5, 5, 6];
 console.warn("🚀 ~ file: script.js:63 ~ arr:", arr);
