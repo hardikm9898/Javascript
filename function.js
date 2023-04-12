@@ -222,4 +222,50 @@ const jessi = {
 
 console.log(jessi);
 
-Object.assign({}, marry);
+function changeStuff(a, b, c) {
+  a *= 10;
+
+  b.item = "changed";
+
+  c = { item: "changed" };
+
+  console.log(a, b, c);
+}
+const num = 10;
+
+const obj1 = { item: "unchanged" };
+
+const obj2 = { item: "unchanged" };
+
+changeStuff(num, obj1, obj2);
+console.log(num);
+console.log(obj1.item);
+console.log(obj2.item);
+
+function abc() {
+  if (true) {
+    var a = 10;
+  }
+  console.log(a);
+}
+abc();
+
+const h = [1, 2, 3, 4, 5, 6, 2, 3, 4, 8, 7, 3, 5, 8, 9];
+
+const array = h.reduce((acc, cuur) => {
+  if (!acc.includes(cuur)) {
+    acc.push(cuur);
+  }
+  return acc;
+}, []);
+
+console.log(array);
+
+const str = "trcocrt";
+
+const rt = str.split("");
+const gr = rt.reverse();
+
+const mr = gr.join("");
+
+console.log(mr === str);
