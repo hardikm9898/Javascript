@@ -3,11 +3,11 @@ console.log(button);
 const display = document.querySelector(".display");
 const trigno = document.querySelectorAll(".trigno");
 const display2 = document.querySelector(".display2");
-const memory = document.querySelectorAll(".memory");
+const memoryElement = document.querySelectorAll(".memory");
 
 const operator = ["+", "-", "*", "/"];
 
-console.log(memory[0].textContent);
+console.log(memoryElement[0].textContent);
 
 console.log(trigno[0].textContent === "sin");
 
@@ -39,30 +39,30 @@ button.forEach((btn) =>
 
     console.log(typeof btn.value);
 
-    let hello = display.innerHTML;
+    let displayText = display.innerHTML;
 
-    console.log(hello);
-    const factorialIndex = hello.indexOf("!");
-    const rightIndex = hello.slice(0, factorialIndex + 1);
+    console.log(displayText);
+    const factorialIndex = displayText.indexOf("!");
+    const rightIndex = displayText.slice(0, factorialIndex + 1);
     switch (buttonValue) {
       case "=":
-        hello = hello.replaceAll("sin(", "Math.sin(Math.PI/180*");
-        hello = hello.replaceAll("cos(", "Math.cos(Math.PI/180*");
-        hello = hello.replaceAll("tan(", "Math.tan(Math.PI/180*");
-        hello = hello.replaceAll("sin<sup>-1</sup>", "Math.asin");
-        hello = hello.replaceAll("cos<sup>-1</sup>", "Math.acos");
-        hello = hello.replaceAll("tan<sup>-1</sup>", "Math.atan");
-        hello = hello.replaceAll("<sup>-1</sup>", "**-1");
-        hello = hello.replaceAll("log<sub>10</sub>", "Math.log10");
-        hello = hello.replaceAll("log<sub>e</sub>", "Math.log");
-        hello = hello.replaceAll("e", "Math.E");
-        hello = hello.replaceAll("^", "**");
-        hello = hello.replaceAll("fact(", `calculatFactorial(`);
-        // hello = hello.replaceAll(`!`,`${calculatFactorial(n)}`)
+        displayText = displayText.replaceAll("sin(", "Math.sin(Math.PI/180*");
+        displayText = displayText.replaceAll("cos(", "Math.cos(Math.PI/180*");
+        displayText = displayText.replaceAll("tan(", "Math.tan(Math.PI/180*");
+        displayText = displayText.replaceAll("sin<sup>-1</sup>", "Math.asin");
+        displayText = displayText.replaceAll("cos<sup>-1</sup>", "Math.acos");
+        displayText = displayText.replaceAll("tan<sup>-1</sup>", "Math.atan");
+        displayText = displayText.replaceAll("<sup>-1</sup>", "**-1");
+        displayText = displayText.replaceAll("log<sub>10</sub>", "Math.log10");
+        displayText = displayText.replaceAll("log<sub>e</sub>", "Math.log");
+        displayText = displayText.replaceAll("e", "Math.E");
+        displayText = displayText.replaceAll("^", "**");
+        displayText = displayText.replaceAll("fact(", `calculatFactorial(`);
+        // displayText = displayText.replaceAll(`!`,`${calculatFactorial(n)}`)
 
-        hello = hello.replaceAll("π", `Math.PI`);
+        displayText = displayText.replaceAll("π", `Math.PI`);
 
-        hello = hello.replaceAll("√", "Math.sqrt");
+        displayText = displayText.replaceAll("√", "Math.sqrt");
 
         for (let i = rightIndex.length - 1; i >= 0; i -= 1) {
           if (operator.includes(rightIndex.charAt(i))) {
@@ -81,23 +81,23 @@ button.forEach((btn) =>
               value
             );
             console.debug("🚀 ~ file: test.js:29 ~ value:", value);
-            hello = hello.replaceAll(
+            displayText = displayText.replaceAll(
               answerValue,
               `${calculatFactorial(value)}`
             );
 
             console.debug(
-              "🚀 ~ file: script.js:86 ~ btn.addEventListener ~ hello:",
-              hello
+              "🚀 ~ file: script.js:86 ~ btn.addEventListener ~ displayText:",
+              displayText
             );
           }
         }
 
-        console.log(hello);
+        console.log(displayText);
 
         display2.innerHTML = display.innerHTML;
         try {
-          display.textContent = `=${this.eval(hello).toFixed(2)}`;
+          display.textContent = `=${this.eval(displayText).toFixed(2)}`;
         } catch (error) {
           console.debug(
             "🚀 ~ file: script.js:100 ~ btn.addEventListener ~ error:",
@@ -146,18 +146,18 @@ button.forEach((btn) =>
         }
         break;
       case "m":
-        if (memory[0].textContent === "xy") {
+        if (memoryElement[0].textContent === "xy") {
           const converArray = ["MS", "MC", "MR", "M+", "M-"];
-          for (let index = 0; index < memory.length; index += 1) {
-            memory[index].textContent = converArray[index];
-            memory[index].value = converArray[index];
+          for (let index = 0; index < memoryElement.length; index += 1) {
+            memoryElement[index].textContent = converArray[index];
+            memoryElement[index].value = converArray[index];
           }
         } else {
           const converArray = ["x<sup>y</sup>", "√x", "x!", "1/x", "π"];
           const signValue = ["^", "√(", "fact(", "<sup>-1</sup>", "π"];
-          for (let index = 0; index < memory.length; index += 1) {
-            memory[index].innerHTML = converArray[index];
-            memory[index].value = signValue[index];
+          for (let index = 0; index < memoryElement.length; index += 1) {
+            memoryElement[index].innerHTML = converArray[index];
+            memoryElement[index].value = signValue[index];
           }
         }
 
