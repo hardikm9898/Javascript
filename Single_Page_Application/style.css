@@ -729,7 +729,7 @@ button:hover {
 
 /* constact */
 
-.contact {
+.contact{
   overflow: hidden;
   gap: 2%;
   align-items: flex-start;
@@ -740,14 +740,14 @@ button:hover {
   flex-direction: column;
   justify-content: center;
 }
-.contactconyainer {
+.contactconyainer{
   display: flex;
   justify-content: flex-start;
   align-items: center;
 
   width: 100%;
 }
-.fillinformation {
+.fillinformation{
   flex-direction: column;
   gap: 7%;
   display: flex;
@@ -756,7 +756,7 @@ button:hover {
   height: 50vh;
   width: 35%;
 }
-.socialmedia {
+.socialmedia{
   gap: 7%;
   display: flex;
   justify-content: center;
@@ -767,18 +767,18 @@ button:hover {
   height: 50vh;
   width: 65%;
 }
-fieldset {
+fieldset{
   border: 3px solid #1e847f;
   border-radius: 10px;
   width: auto;
   height: auto;
 }
-legend {
+legend{
   padding: 2px;
   font-size: larger;
   color: #45b3ad;
 }
-input {
+input{
   font-size: 16px;
   outline: none;
   background-color: #1d1d1d;
